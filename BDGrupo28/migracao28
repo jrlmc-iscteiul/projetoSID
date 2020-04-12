@@ -1,0 +1,30 @@
+echo "Inicio: "
+echo %TIME%
+
+cd c:\xampp\mysql\bin
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsDiaSemana.csv' INTO TABLE logsdiasemana FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsMedicoesSensores.csv' INTO TABLE logsmedicoessensores FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsMedicoesSensores.csv' INTO TABLE logsmedicoessensores FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsRondaExtra.csv' INTO TABLE logsrondaextra FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsRondaPlaneada.csv' INTO TABLE logsrondaplaneada FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsSistema.csv' INTO TABLE logssistema FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+mysql -u root mysqllogg28 -e "LOAD DATA INFILE 'C:/Users/ASUS/Documents/logsUtilizador.csv' INTO TABLE logsutilizador FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
+
+del C:\Users\ASUS\Documents\logsDiaSemana.csv
+del C:\Users\ASUS\Documents\logsMedicoesSensores.csv
+del C:\Users\ASUS\Documents\logsRondaExtra.csv
+del C:\Users\ASUS\Documents\logsrondaplaneada.csv
+del C:\Users\ASUS\Documents\logsSistema.csv
+del C:\Users\ASUS\Documents\logsutilizador.csv
+
+echo "Final: "
+echo %TIME%
+
+
