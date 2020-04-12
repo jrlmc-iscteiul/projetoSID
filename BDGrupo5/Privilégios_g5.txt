@@ -1,0 +1,64 @@
+CREATE ROLE Administrador;
+GRANT CREATE USER ON *.* TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON mysql_main_g5.utilizador TO Administrador;
+GRANT SELECT, INSERT, UPDATE ON mysql_main_g5.sistema TO Administrador;
+GRANT SELECT, INSERT ON mysql_main_g5.medicoessensores TO Administrador;
+GRANT SELECT ON mysql_main_g5.rondaplaneada TO Administrador;
+GRANT SELECT ON mysql_main_g5.rondaextra TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.criarUtilizador TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.getSelectFromUtilizador TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarUtilizador TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarSistema TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.monitorizarLeiturasSensores TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.pesquisaTabelaTempELum TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.removerUtilizador TO Administrador;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.insertSelectLogs TO Administrador;
+
+GRANT SELECT, DELETE ON mysql_main_g5.logmedicoessensores TO Administrador;
+GRANT SELECT, DELETE ON mysql_main_g5.logrondaextra TO Administrador;
+GRANT SELECT, DELETE ON mysql_main_g5.logrondaplaneada TO Administrador;
+GRANT SELECT, DELETE ON mysql_main_g5.logsistema TO Administrador;
+GRANT SELECT, DELETE ON mysql_main_g5.logutilizador TO Administrador;
+
+GRANT SELECT, INSERT ON mysql_log_g5.logmedicoessensores TO Administrador;
+GRANT SELECT, INSERT ON mysql_log_g5.logrondaextra TO Administrador;
+GRANT SELECT, INSERT ON mysql_log_g5.logrondaplaneada TO Administrador;
+GRANT SELECT, INSERT ON mysql_log_g5.logsistema TO Administrador;
+GRANT SELECT, INSERT ON mysql_log_g5.logutilizador TO Administrador;
+
+CREATE ROLE DiretorMuseu;
+GRANT CREATE USER ON *.* TO DiretorMuseu;
+GRANT SELECT, UPDATE ON mysql_main_g5.utilizador TO DiretorMuseu;
+GRANT SELECT ON mysql_main_g5.medicoessensores TO DiretorMuseu;
+GRANT SELECT ON mysql_main_g5.rondaplaneada TO DiretorMuseu;
+GRANT SELECT ON mysql_main_g5.rondaextra TO DiretorMuseu;
+GRANT SELECT ON mysql_main_g5.sistema TO DiretorMuseu;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.getSelectFromUtilizador TO DiretorMuseu;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarUtilizador TO DiretorMuseu;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.pesquisaTabelaTempELum TO DiretorMuseu;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.monitorizarLeiturasSensores TO DiretorMuseu;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.insertSelectLogs TO DiretorMuseu;
+
+CREATE ROLE ChefeSeguranca;
+GRANT CREATE USER ON *.* TO ChefeSeguranca;
+GRANT SELECT, INSERT, UPDATE, DELETE ON mysql_main_g5.rondaplaneada TO ChefeSeguranca;
+GRANT SELECT, INSERT, UPDATE ON mysql_main_g5.rondaextra TO ChefeSeguranca;
+GRANT SELECT ON mysql_main_g5.medicoessensores TO ChefeSeguranca;
+GRANT SELECT, UPDATE ON mysql_main_g5.utilizador TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.alterarRondaPlaneada TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.criarRondaPlaneada TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarUtilizador TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.getSelectFromUtilizador TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.monitorizarLeiturasSensores TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.passarCartao TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.pesquisaTabelaTempELum TO ChefeSeguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.insertSelectLogs TO ChefeSeguranca; 
+
+CREATE ROLE Seguranca;
+GRANT CREATE USER ON *.* TO Seguranca;
+GRANT SELECT, UPDATE ON mysql_main_g5.utilizador TO Seguranca;
+GRANT SELECT ON mysql_main_g5.rondaplaneada TO Seguranca;
+GRANT SELECT, INSERT, UPDATE, DELETE ON mysql_main_g5.rondaextra TO Seguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.getSelectFromUtilizador TO Seguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarUtilizador TO Seguranca;
+GRANT EXECUTE ON PROCEDURE mysql_main_g5.passarCartao TO Seguranca;
