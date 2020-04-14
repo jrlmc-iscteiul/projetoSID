@@ -52,3 +52,6 @@ GRANT EXECUTE ON PROCEDURE mysql_main_g28.consultarUtilizador TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g28.alterarMorada TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g28.adicionarRondaExtra TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g28.insertLogs TO Seguranca;
+
+CREATE ROLE Auditor; 
+GRANT SELECT ON mysqllogg28.* TO Auditor; 
