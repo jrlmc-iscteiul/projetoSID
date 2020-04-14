@@ -62,3 +62,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON mysql_main_g5.rondaextra TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g5.getSelectFromUtilizador TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g5.editarUtilizador TO Seguranca;
 GRANT EXECUTE ON PROCEDURE mysql_main_g5.passarCartao TO Seguranca;
+
+CREATE ROLE Auditor; 
+GRANT SELECT ON mysql_log_g5.* TO Auditor;
